@@ -10,14 +10,21 @@ router.get('/form', (req, res) => {
     res.render('layouts/form');
 });
 
+// Crear Ficha
 router.post('/ficha/add', async(req, res) => {
     try {
         const ficha = Ficha(req.body);
-        const fichaSaved = await ficha.save();
-        console.log(fichaSaved);
-        res.send('Ficha creada');
+        const tieneFicha = await Ficha.findOne({ rut: ficha.rut});
+        if(!tieneFicha) {
+            await ficha.save();
+            res.redirect('/form');
+        } else {
+            // Actualizar registro
+            // await Ficha.updateOne(ficha.id).lean();
+        }
     } catch (error) {
         console.error(error.message);
+        console.error(error.code);
     }
 });
 
