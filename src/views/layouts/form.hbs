@@ -1,1 +1,48 @@
-<h3>Registrate</h3>
+<form action="/ficha/add" method="POST">
+  <div>
+    <label for="rut">Rut:</label>
+    <input type="text" name="rut" id="rut" placeholder="p.e: 12345678-9" />
+  </div>
+  <div>
+    <label for="nombres">Nombres:</label>
+    <input type="text" name="nombres" id="rut" placeholder="p.e: Camila Paz" />
+  </div>
+  <div>
+    <label for="apellidos">Apellidos:</label>
+    <input type="text" name="apellidos" id="apellidos" placeholder="Pérez Urrutia" />
+  </div>
+  <div>
+    <label for="direccion">Direccion:</label>
+    <input type="text" name="direccion" id="direccion" placeholder="Los girasoles 890" />
+  </div>
+  <div>
+    <label for="ciudad">Ciudad:</label>
+    <input type="text" name="ciudad" id="ciudad" placeholder="Escribe un ciudad" />
+  </div>
+  <div>
+    <label for="telefono">Teléfono:</label>
+    <input type="text" name="telefono" id="telefono" placeholder="Escribe un telefono" />
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="text" name="email" id="email" placeholder="Escribe un email" />
+  </div>
+  <div>
+    <label for="fechaNacimiento">Fecha Nacimiento:</label>
+    <input type="date" name="fechaNacimiento" id="fechaNacimiento" placeholder="Selecciona fecha nacimiento" />
+  </div>
+  <div>
+    <label for="estadoCivil">Estado Civil:</label>
+    <select name="estadoCivil" id="estadoCivil">
+        <option value="Default" selected disabled>Selecciona un estado civil</option>
+        <option value="Soltero">Soltero</option>
+        <option value="Casado">Casado</option>
+    </select>
+  </div>
+  <div>
+    <label for="cometario">Comentarios:</label>
+    <textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="Escribe un comentario"></textarea>
+  </div>
+
+  <button>Agregar</button>
+</form>
