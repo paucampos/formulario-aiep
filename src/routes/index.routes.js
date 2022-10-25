@@ -10,14 +10,20 @@ router.get('/form', (req, res) => {
     res.render('layouts/form');
 });
 
-router.post('/ficha/add', (req, res) => {
-    const ficha = Ficha(req.body);
-    console.log(ficha);
-    res.send('Ficha creada');
+router.post('/ficha/add', async(req, res) => {
+    try {
+        const ficha = Ficha(req.body);
+        const fichaSaved = await ficha.save();
+        console.log(fichaSaved);
+        res.send('Ficha creada');
+    } catch (error) {
+        console.error(error.message);
+    }
 });
 
-router.get('/edit', (req, res) => {
-    res.render('layouts/edit');
+router.get('/list', async (req, res) => {
+    const fichas = await Ficha.find({}).lean();
+    res.render('layouts/list', { fichas });
 });
 
 export default router;
