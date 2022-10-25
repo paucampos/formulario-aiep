@@ -2,14 +2,15 @@
   "name": "formulario-aiep",
   "version": "1.0.0",
   "engines": {
-    "node": "14.18"
+    "node": "14.18.1",
+    "npm": "6.14.15"
   },
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node ./dist",
     "dev": "nodemon src/index.js --exec babel-node",
-    "build": "babel src -d dist && ncp src/views dist/views && ncp src/public dist/public",
+    "build": "babel src -d dist && ncp src/views dist/views",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
