@@ -11,8 +11,8 @@ app.set("views", path.join(__dirname, "views"));
 app.engine(
   ".hbs",
   engine({
-    layoutsDir: path.join(app.get("views"), "layouts"),
-    defaultLayout: "main",
+    layoutsDir: path.join(app.get("views")),
+    defaultLayout: "index",
     extname: ".hbs"
   })
 );
