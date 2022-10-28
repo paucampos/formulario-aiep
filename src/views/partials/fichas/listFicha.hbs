@@ -1,0 +1,26 @@
+<h2 class="text-center mb-3">Lista Pacientes</h2>
+<table class="table text-white">
+  <thead>
+    <tr>
+      <th scope="col">Rut</th>
+      <th scope="col">Nombres</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each fichas}}
+      <tr>
+        <th scope="row">{{rut}}</th>
+        <td> {{nombres}}</td>
+        <td>
+          {{apellidos}}
+        </td>
+        <td>
+          <a href="/ficha/edit/{{ _id }}" class="btn bg-info mb-2">Editar</a>
+          <a href="/ficha/delete/{{ _id }}" class="btn bg-danger mb-2">Eliminar</a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

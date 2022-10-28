@@ -1,17 +1,31 @@
-<h2>Lista Pacientes</h2>
+<h2 class="text-center mb-3">Lista Pacientes</h2>
+<div class="row">
 
-<div class="row bg-success mb-2">
-  <div class="col ">Nombres</div>
-  <div class="col"> Acciones</div>
-</div>
-{{#each fichas}}
-  <div class="row">
-    <div class="col">
-      {{nombres}}
-    </div>
-    <div class="col">
-      <button class="btn bg-info mb-2">Editar</button>
-      <button class="btn bg-danger mb-2">Eliminar</button>
-    </div>
+  <div class="col-md-6 offset-md-3">
+    <table class="table text-white">
+      <thead>
+        <tr>
+          <th scope="col">Rut</th>
+          <th scope="col">Nombres</th>
+          <th scope="col">Apellidos</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each fichas}}
+          <tr>
+            <th scope="row">{{rut}}</th>
+            <td> {{nombres}}</td>
+            <td>
+              {{apellidos}}
+            </td>
+            <td>
+              <button class="btn bg-info mb-2">Editar</button>
+              <button class="btn bg-danger mb-2">Eliminar</button>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
   </div>
-{{/each}}
+</div>

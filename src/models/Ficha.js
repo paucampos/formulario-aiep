@@ -42,7 +42,7 @@ const fichaSchema = new Schema({
         required: true,
         trim: true
     },
-    comentarios: String 
+    comentario: String 
 }, {
     timestamps: true,
     versionKey: false

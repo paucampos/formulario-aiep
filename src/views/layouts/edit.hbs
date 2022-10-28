@@ -1,0 +1,57 @@
+<h2 class="text-center mb-3">Editar ficha paciente</h2>
+
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <form action="/ficha/edit/{{ficha._id}}" method="POST">
+      <div class="row mb-2">
+        <div class="col">
+          <label for="rut" class="form-label">Rut:</label>
+          <input type="text" class="form-control" name="rut" id="rut" value="{{ficha.rut}}" disabled />
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col">
+          <label for="nombres" class="form-label">Nombres:</label>
+          <input type="text" name="nombres" id="rut" class="form-control" placeholder="p.e: Camila Paz" value="{{ ficha.nombres }}" />
+        </div>
+        <div class="col">
+          <label for="apellidos" class="form-label">Apellidos:</label>
+          <input type="text" name="apellidos" id="apellidos" class="form-control" placeholder="Pérez Urrutia" value="{{ ficha.apellidos }}" />
+        </div>
+      </div>
+      <div class="mb-2">
+        <label for="direccion" class="form-label">Direccion:</label>
+        <input type="text" name="direccion" id="direccion" class="form-control" placeholder="Los girasoles 890" value="{{ ficha.direccion }}"/>
+      </div>
+      <div class="mb-2">
+        <label for="ciudad" class="form-label">Ciudad:</label>
+        <input type="text" name="ciudad" id="ciudad" class="form-control" placeholder="Escribe un ciudad" value="{{ ficha.ciudad }}"/>
+      </div>
+      <div class="mb-2">
+        <label for="fono" class="form-label">Teléfono:</label>
+        <input type="text" name="fono" id="fono" class="form-control" placeholder="Escribe un telefono" value="{{ ficha.fono }}"/>
+      </div>
+      <div class="mb-2">
+        <label for="email" class="form-label">Email:</label>
+        <input type="text" name="email" id="email" class="form-control" placeholder="Escribe un email" value="{{ ficha.email }}"/>
+      </div>
+      <div class="mb-2">
+        <label for="fechaNacimiento" class="form-label">Fecha Nacimiento:</label>
+        <input type="text" name="fechaNacimiento" id="fechaNacimiento" class="form-control" placeholder="Selecciona fecha nacimiento" value="{{ ficha.fechaNacimiento }}" disabled/>
+      </div>
+      <div class="mb-2">
+        <label for="estadoCivil" class="form-label">Estado Civil:</label>
+        <select name="estadoCivil" id="estadoCivil" class="form-select">
+          <option value="Default" selected disabled>Selecciona un estado civil</option>
+          <option value="Soltero">Soltero</option>
+          <option value="Casado">Casado</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="cometario" class="form-label">Comentarios:</label>
+        <textarea name="comentario" id="comentario" cols="30" rows="10" class="form-control" placeholder="Escribe un comentario">{{ ficha.comentario }}</textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Editar</button>
+    </form>
+  </div>
+</div>
