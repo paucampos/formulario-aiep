@@ -10,6 +10,8 @@ export const addFicha = async (req, res) => {
     const ficha = Ficha(req.body);
     console.log(ficha);
     await ficha.save();
+    console.log("redirect: ", fichas);
+    res.render("layouts/form", { fichas });
   } catch (error) {
     console.error(error.message);
     console.error(error.code);
